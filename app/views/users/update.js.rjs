@@ -1,0 +1,2 @@
+page.replace_html 'flash', flash.now[:notice]
+page.show 'flash'

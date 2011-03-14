@@ -1,0 +1,9 @@
+page.replace_html('flash', flash[:notice])
+if @destroy
+  @all_attaches.nil? ? 
+    page.replace_html("attach_#{params[:id]}" , t('general.files_not_found')) :
+    page.remove("attach_#{params[:id]}")
+end
+page.show 'flash' 
+
+

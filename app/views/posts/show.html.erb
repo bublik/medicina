@@ -1,0 +1,7 @@
+<% description(@post.title)
+title(@post.title)
+keywords(@post.tags.collect{|t| t.name }.join(', ')) -%>
+<%= link_to( image_tag('/images/ico/arrow_left.gif') + t('general.back'), posts_path) -%>
+<%= '&nbsp;'+link_to_new_post -%>
+<%= render :partial => 'msg', :locals => {:post => @post} -%>
+<br clear="all" />

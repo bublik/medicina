@@ -1,0 +1,15 @@
+<p>
+  <b><%= t('general.user_') %>:</b>
+  <%=h @bcomment.user.full_name %>
+</p>
+<p>
+  <b><%= t('general.message') %>:</b>
+  <%=h @bcomment.post.title %>
+</p>
+<p>
+  <%=h @bcomment.body %>
+</p>
+
+
+<%= link_to t('general.edit'), edit_bcomment_path(@bcomment) if can_edit(@bcomment) %> |
+<%= link_to t('general.back'), bcomments_path %>

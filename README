@@ -1,0 +1,15 @@
+TODO
+
+0) Localization SiteConfigs BODY
+1) Замена рекламной биржи  конфиге (Sape || LinkFeed)
+2) Замена Fckeditor -> lite analog
+3) Добавить Simple Capture for comments и имя пользователя и мыло в preferences
+4) Просмотр авто админки еще раз
+
+== Добро пожаловать
+
+По умолчанию создается пользователь с паролем и логином 
+
+login: admin 
+password: admin
+

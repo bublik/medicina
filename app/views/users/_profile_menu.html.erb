@@ -1,0 +1,5 @@
+<div class="pad5" style="display:block; position: relative; width: 200px; float: left; height: 300px;">
+  <h1><%= t('general.profile') %></h1>
+  <%= link_to(t('general.profile'), edit_user_path(current_user), :class => 'mtitle block')%>
+  <%= link_to(t('user.change_password_title'), {:action => 'change_password', :id => current_user}, :class => 'mtitle block') %>
+</div>

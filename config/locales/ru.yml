@@ -1,0 +1,276 @@
+ru:
+  Dashboard: 'Дашбоард'
+  date:
+    formats:
+      default: "%Y-%m-%d"
+      short: "%b %d"
+      long: "%B %d, %Y"
+      date: "%Y-%m-%d"
+      md:  "%m-%d"
+      presentable_datetime: "%a %b %d, %Y %H:%M"
+      presentable_date:  "%a %b %d, %Y"
+      descr: "%d %b %Y"
+      month_names: [~, января, февраля, марта, апреля, мая, июня, июля, августа, сентября, октября, ноября, декабря]
+    # see russian gem for info on "standalone" day names
+      standalone_month_names: [~, Январь, Февраль, Март, Апрель, Май, Июнь, Июль, Август, Сентябрь, Октябрь, Ноябрь, Декабрь]
+      abbr_month_names: [~, янв., февр., марта, апр., мая, июня, июля, авг., сент., окт., нояб., дек.]
+      standalone_abbr_month_names: [~, янв., февр., март, апр., май, июнь, июль, авг., сент., окт., нояб., дек.]
+  time:
+    formats:
+      default: "%a, %d %b %Y, %H:%M:%S %z"
+      time: "%H:%M"
+      short: "%d %b, %H:%M"
+      long: "%d %B %Y, %H:%M"
+      date: "%Y-%m-%d"
+      md: "%m-%d"
+      descr: "%d %b %Y"
+  activerecord:
+    models:
+      page: 'Страница'
+      category: 'Раздел'
+      post: 'Заметка'
+      attachment: 'Атачи'
+      bcomment: 'Коментарии'
+      site_config: 'Конфиг'
+      user: 'Пользователь'
+      session: 'Сессии'
+      schema_migration: 'Миграции'
+      typus_user: 'Пользователь'
+    attributes:
+      page:
+        identifier: 'Идентификатор'
+        title: 'Название страницы'
+        body: 'Текст'
+      attachment:
+        post_id: 'Заметка'
+        parent_id: 'Оригинал'
+        content_type: 'Mime type'
+        filename: 'Файл'
+        thumbnail: 'Тубмс'
+        size: 'Размер'
+        width: 'Ширина'
+        height: 'Высота'
+      bcomment:
+        body: 'Сообщение'
+      category:
+        name: 'Идентификатор'
+        title: 'Название'
+        first_page: 'Показывать на первой'
+      site_config:
+        body: 'Текст'
+        identifier: 'Идентификатор'
+        is_active: 'Активный'
+        disable_at: 'Дата откл.'
+      user:
+        login: 'Логин'
+        email: 'Емейл'
+        first_name: 'Имя'
+        last_name: 'Фамилия'
+        avatar: 'Аватар'
+        privilegies: 'Првилегии'
+        raiting: 'Рейтинг'
+        password: 'пароль'
+        crypt_password: 'шифрованый пароль'
+        active: 'Активен'
+        code_activate: 'Код активации'
+        birth_day: 'День рождения'
+        icq_number: 'аська'
+        home_page: 'домашнаяя страница'
+        location: 'Живу'
+        interests: 'Интересы'
+        job: 'Работаю'
+        description: 'Пару слов о себе'
+  user:
+    show_profile: Просмотр профиля
+    privilegies: Статус
+    state: Состояние
+    active: Активен
+    in_active: Не активирован
+    user_messages: Его сообщения
+    created_at: Дата регистрации
+    updated_at: Последний визит
+    birth_day: Дата рождения
+    addons_information: Дополнительная информация
+    home_page: Домашняя страница
+    location: Место жительства
+    description: Подпись
+    interests: Интересы
+    work: Работа
+    name: Имя
+    last_name: Фамилия
+    login: Логин
+    icq: Аська
+    email: E-mail
+    confirm_email: Повторите E-mail
+    change_password_title: Смена пароля
+    old_password: Старый пароль
+    password: Пароль
+    new_password: Новый пароль
+    confirm_password: Повторите пароль
+  general:
+    section: Раздел
+    sections: Разделы
+    profile: Профайл
+    solutions: Решения
+    services: Решения
+    partners: Партнеры
+    contacts: Контакты
+    forum: Форум
+    select_section: Выберите раздел
+    from_list_or_new: ' из списка/создайте новый '
+    attach_file: Прикрепить файл
+    files: Файлы
+    categories: Категории
+    exit: Выйти
+    enter: Войти
+    send: Отправить
+    create: Создать
+    open: Открыт
+    save: Сохранить
+    clouse: Закрыт
+    close: Закрыть
+    private: Приватрый
+    new: Новый
+    edit: Редактировать
+    show: Посмотреть
+    hide: Скрыть
+    replay: Ответить
+    replay_priv: Личнoе
+    back: Назад
+    delete: Удалить
+    destroy: Удалить
+    upload: Загрузить
+    gems: Список джемов
+    upload_avatar: Загрузить аватару
+    upload_avatar_size: аватара должна быть не более чем 80x80 и объемом менее 5 kb.
+    find: Поиск
+    forum: Форум
+    phrase: Фраза
+    droped: Удалено
+    next: Следующая
+    main: Главная
+    previous: Предыдущая
+    last: Последняя
+    first: Первая
+    pages: Страниц
+    page: Страница
+    tema: Тема
+    registration: Регистрация
+    login: Логин
+    password: Пароль
+    avatar: Аватара
+    fio: ФИО
+    location: Живет
+    job: Работа
+    last_visit: Заходил
+    posts: Сообщений
+    messages: Сообщения
+    articles: Статьи
+    last_posts: Последние сообщения
+    users_list: Список пользователей
+    key_words: 'Ключевые слова'
+    users: Пользователи
+    admin_: Админ
+    moderator_: Модератор
+    user_: Пользователь
+    guest_: Гость
+    guests_online: 'Гости: '
+    users_online: 'Онлайн: '
+    unknown_user: Неизвестный
+    user_not_found: Пользователь не найден!
+    private_information_saved: Личные данные изменены.
+    are_you_sure: 'Вы уверены?' #'Are you sure?'
+    page_not_found: страница не найдена
+    search_results: Результаты поиска
+    search_in: Искать в
+    extendet_search: Расширенный поиск
+    themes: Темах
+    tags: Ключевые слова
+    responds: Ответах
+    message: Сообщение
+    private_mails: Личные письма
+    for_user: Для пользователя
+    add_comment: Добавить комментарий
+    unknown_tag: Неизвестный тег
+    categoty_is_empty: В данном разделе нет записей
+
+    comment_added: 'Комментарий добавлен.'
+    comment_saved: 'Комментарий сохранен.'
+    new_messages: 'Новые сообщения'
+    new_article: 'Новая статья'
+    tagged_articles: Затегированы темы
+    found: Найдено
+    coincidence_wodth_tag: совпадений с тегом
+    comment_edit: Редактирование комментария
+    comments: комментарии
+
+    file_deleted: 'Файл удален!'
+    file_not_deleted: 'Файл не удален!'
+    files_not_found: 'Файлов нет!'
+
+    write_new_article: 'Написать статью'
+
+    auth: Аутентификация
+    human_authorization: 'Введите текст:'
+    captcha_incorrect: 'Введенный текст не соответствует изобраежению'
+    notice_account_activated: Ваша учетная запись успешно активизирована!
+    notice_error_activated: Ошибка активизации учетной записи!
+    notice_logout: Вы отлогинились!
+    notice_register_add_msg: Для добавления сообщений зарегистрируйтесь!
+    notice_msg_created: Новая тема создана!
+    notice_msg_updated: Сообщение изменено!
+    notice_message_deleted: Сообщение удалено!
+    notice_message_empty: Слишком короткие поля!
+    notice_message_slosed: Сообщение закрыто!
+    notice_message_sended: Сообщение отправлено!
+    notice_message_sende_err: Ошибка отправки сообщений!
+    notice_messages_not_found: Сообщений нет!
+    notice_permissions_denie: У вас нет прав на выполнение данной операции!
+    notice_authorized_area: 'Доступ только для авторизированных пользователей!'
+    notice_email_incorrect: Не правильный формат почтового ящика!
+    notice_user_id_incorrect: Не правильный UID пользователя!
+    notice_password_incorrect: Не верный пароль!
+    notice_user_created: <big>Пользователь создан!</big> <br/> Для активизации учетной записи перейдите по ссылке в письме.
+    notice_user_droped: Пользователь удален!
+    notice_user_unknown: Такого пользователя не существует!
+    avatar_updated: Аватара изменена.
+    avatar_updated_error: Ошибка при сохранении, выберите другое изображение!
+    current_password_incorrect: Не верный текущий пароль!
+    current_password_updated: Пароль изменен!
+    login_password_not_found: Логин/Пароль не верный
+    enter_your_login: 'Ведите ваш Логин'
+    user_not_activated: Пользователь не активизирован.
+    request_activate: Активизация акаунта
+    request_password: Напоминание пароля
+    content_updated: Данные изменены.
+    content_updated_error: Ошибка изменения данных!
+    content_incorrect: Данные не корректны!
+    passwords_different: Пароли не установлены или не совпадают!
+
+    reputation: Репутация
+    openclose: Закрыть после добавления сообщения.
+    stickunstick: Сделать важной после добавления сообщения.
+
+    mail_aply_register: Подтверждение регистриции
+    mail_describe_msg: Подписка на форуме
+    mail_new_msg: Новое сообщение
+    mail_new_privatemsg: Вы получили приватное сообщение
+    mail_change_password: Смена пароля
+    mail_reminde_password: Напоминание пароля
+    mail_link_send: Вам было отправлено письмо с дальнейшими инструкциями
+
+    tags_word: разделять запятой
+    progect_links: Ресурсы
+
+    error_500:
+      title: Внутрення ошибка сервера
+      message: Администрация уже уведомлена об ошибке, и в ближайшее время она будет исправленна.<br/> Попробуйте зайти позже.
+    error_404:
+      title:  Извините такой страницы нет.
+      message:
+    error_403:
+      title: Доступ запрещен. # Forbidden
+      message: Вам запрещено просматривать информацию по данному адресу. #You are not allowed to visit the page you were looking for. The administrator of this web site has denied access to you at this time.
+    about_project: 'О проекте'
+    frends: Друзья
+    if_have_questions_contact_to: по всем вопросам обращайтесь на      

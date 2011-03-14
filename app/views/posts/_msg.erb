@@ -1,0 +1,48 @@
+<h1 class="post">  
+  <%= link_to( post.title, post_path(post, :html), :title => post.title) %>
+</h1>
+<h4><%= link_to_if(post.category, post.category.name, category_posts_url(post.category)) %></h4>
+<div class="b small">
+  <%= image_tag('/images/ico/date.gif') + post.created_at.to_s(:long) -%>
+  <%= image_tag('/images/ico/user.gif') + link_user(post.user) -%>
+  <%= image_tag('/images/ico/comment.gif') + t('general.comments')+" #{post.bcomments.count}" -%>
+</div>
+<% if can_edit(post) -%>
+  <div class="small" style="clear: both;">
+    <%= link_to( image_tag('/images/ico/page_edit.gif') + t('general.edit'), edit_post_path(post), :title => 'edit') -%>
+    <%= link_to( image_tag('/images/ico/page_delete.gif')+ t('general.destroy'), post, :confirm => t('general.are_you_sure'), :title => 'destroy', :method => :delete) -%>
+  </div>
+<% end -%>
+
+<table>
+  <tr>
+    <td>
+      <div style="float: left; margin-right: 5px;">{{in_post_advert}}</div>
+      <%= attachment_list(post) %>
+      <% cache(post.cache_key(I18n.locale.to_s)) do %>
+        <% if post.tags.empty? || post.body.blank? -%>
+          <%= post.body %>
+        <% else -%>
+          <%= tagged_body(post) %>
+        <% end -%>
+      <% end %>
+      <%= show_sape_links(1) -%>
+      <%= render(:partial => 'bcomments/index', :locals => {:bcomments => post.bcomments, :post => post}) if action_name.eql?('show') -%>
+      <%= render(:partial => 'bcomments/new', :locals => {:post => post, :bcomment => Bcomment.new }) if action_name.eql?('show') -%>
+      <div class="pad5">{{advert_after_post}}</div>
+    </td>
+    <% if @related_posts %>
+      <td style="width: 30%" class="replay">
+        {{after_post_attachments}}
+        <% @related_posts.each do |related_post| %>
+          <h4><%= link_to(related_post.title, post_path(related_post, :html), :title => related_post.title) %></h4>
+          <div>
+            <%= attachment_list(related_post, 1) %>
+            <%= related_post.body.gsub(/<\/?[^>]*>/, "").mb_chars[0..100] %>
+          </div>
+        <% end%>
+      </td>
+    <% end %>
+  </tr>
+</table>
+<br clear="all" />

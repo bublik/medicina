@@ -1,0 +1,17 @@
+<%= render :partial => '/admin/menu'%>
+<p>
+  <b>Name:</b>
+  <%=h @category.name %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%=h @category.title %>
+</p>
+<p>
+  <b>Показывать на первой</b><br />
+  <%= @category.first_page ? image_tag('/images/ico/icon_accept.gif') : image_tag('/images/ico/delete.gif')%>
+</p>
+
+<%= link_to 'Edit', edit_admin_category_path(@category) %> |
+<%= link_to 'Back', admin_categories_path %>

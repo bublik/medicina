@@ -1,0 +1,21 @@
+# == Schema Information
+#
+# Table name: sessions
+#
+#  id         :integer         not null, primary key
+#  session_id :string(255)     not null
+#  data       :text
+#  created_at :datetime
+#  updated_at :datetime
+#
+
+--- 
+sessions_001: 
+  updated_at: 2008-05-26 17:11:29.551794
+  session_id: 728cb069770c7e0e701a451d327f56e9
+  id: "2"
+  created_at: 2008-05-19 16:23:41.370481
+  data: |
+    BAh7CDoJdXNlcmkGOg5zdWJkb21haW4wIgpmbGFzaElDOidBY3Rpb25Db250
+    cm9sbGVyOjpGbGFzaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA
+

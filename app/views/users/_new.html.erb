@@ -1,0 +1,35 @@
+<%= error_messages_for 'users' %>
+<!--[form:users]-->
+<table class="w50proc" class="border" >
+  <tr><th colspan="2">Регистрация</th></tr>
+  <tr>
+    <td><%= t('user.login') %></td>
+    <td><%= text_field 'user', 'login'  %></td>
+  </tr>
+  <tr>
+    <td><%= t('user.email') %>:</td>
+    <td><%= text_field 'user', 'email'  %></td>
+  </tr>
+  <tr>
+    <td><%= t('user.confirm_email') %>:</td>
+    <td><input type="text" name="re_email" value=""  size="30"  %></td>
+  </tr><!--
+  <tr>
+    <td>Фамилия</td>
+    <td><%= text_field 'user', 'first_name'  %></td>
+  </tr>
+  <tr>
+    <td>Имя</td>
+    <td><%= text_field 'user', 'last_name'  %></td>
+  </tr>
+-->
+  <tr>
+    <td><%= t('user.password') %></td>
+    <td><%= password_field 'user', 'password' ,:size=>"15" %></td>
+  </tr>
+  <tr>
+    <td><%= t('user.confirm_password') %></td>
+    <td><input type="password" name="re_password" size="15"></td>
+  </tr>
+</table>
+<!--[eoform:users]-->

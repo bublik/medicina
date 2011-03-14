@@ -1,0 +1,44 @@
+<% description(@user.full_name)
+  title(@user.full_name) -%>
+
+<table class="border">
+  <tr><th colspan="2">
+      <div class="c"><%= t('user.show_profile') %>: <span class='b'><%=h @user.full_name -%></span></div>
+    </th></tr>
+  <tr>
+    <td class="w150" align="center">
+      <%=h @user.full_name %>
+    </td>
+    <td>
+      <div class="pad5">
+        <%= content_tag(:b, t('user.privilegies')) %>: <big><%= user_mode(@user.privilegies,'h') -%></big> <br/>
+        <%= content_tag(:b, t('user.state')) -%>:
+        <%= @user.active ? t('user.active') : t('user.in_active') -%><br/>
+        <%= content_tag(:b, t('user.user_messages')) -%>:
+        <%= link_user_post(@user) -%>
+      </div>
+
+      <div class="pad5">
+        <%= content_tag(:b, t('user.birth_day')) %>:  <%= @user.birth_day.to_s(:date) -%><br/>
+        <%= content_tag(:b, t('user.created_at')) %>: <%= @user.created_at.to_s(:date) -%><br/>
+        <%= content_tag(:b, t('user.updated_at')) %>: <%= @user.updated_at.to_s(:date) -%><br/>
+
+        <%= image_tag'/images/pagers/im_icq.gif' -%>
+        <%= link_to_if(@user.icq_number, @user.icq_number, "http://online.mirabilis.com/scripts/online.dll?icq=#{@user.icq_number}&img=5") -%>
+      </div>
+
+      <div class="pad5">
+        <h3><%= t('user.addons_information') -%></h3>
+        <b><%= t('user.home_page') -%>:</b> <%= link_to_if(@user.home_page, @user.home_page, @user.home_page, :rel => 'nofollow') -%><br />
+        <b><%= t('user.location') -%>:</b> <%=h @user.location -%><br />
+        <b><%= t('user.description') -%>:</b> <noindex><%= h(@user.description) -%></noindex><br />
+        <b><%= t('user.interests') -%>:</b> <%=h @user.interests %><br />
+        <b><%= t('user.work') -%>:</b> <%=h @user.job  -%><br/>
+      </div>
+    </td>
+  </tr>
+</table>
+<div class='pagination'>
+  <%= link_to(t('general.edit'), edit_user_path(@user), :class => 'button') if can_edit_user(@user) -%>
+  <%= link_to(t('general.users'), users_path, :class => 'button') -%>
+</div>

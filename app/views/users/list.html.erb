@@ -1,0 +1,38 @@
+<% title(t('general.users_list'))
+description(t('general.users_list')) %>
+
+<h1><%= t('general.users_list') -%></h1>
+<table class="border c">
+  <tr>
+    <th><%=t('general.login') -%></th>
+    <th><%=t('general.fio') -%></th>
+    <th><%=t('general.location') -%></th>
+    <th><%=t('general.job') -%></th>
+    <th><%=t('general.last_visit') -%></th>
+    <th><%=t('general.posts') -%></th>
+  </tr>
+
+  <% for user in @users %>
+    <tr>
+      <td><%= link_to(user.login, user_path(user, :html)) %>
+        <%= link_to( image_tag('/images/ico/page_right.gif', :alt => t('general.show')), user_path(user,:html),:class=>'button', :title => t('general.show')) %>
+        <% if can_edit_user(user) -%>
+          <div class="c pad5">
+            <%= link_to(image_tag('/images/ico/page_edit.gif', :alt => t('general.edit')), edit_user_path(user),:class=>'button', :title => t('general.edit'))%>
+            <%= link_to(image_tag('/images/ico/page_delete.gif', :alt => t('general.delete')), user_path(user), :confirm =>'Уверен?',:title => t('general.delete'), :method => :delete, :class=>'button')  %>
+          </div>
+        <% end -%>
+      </td>
+      <td><%= user.full_name %></td>
+      <td><%= user.location %></td>
+      <td><%= user.job %></td>
+      <td><%= user.updated_at.to_s(:long) %></td>
+      <td><%= user.posts.count %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= will_paginate(@users)  %>
+<div class="pagination">
+  <%= link_to(t('general.registration'), {:action => 'new'}, :class => 'button') %>
+</div>

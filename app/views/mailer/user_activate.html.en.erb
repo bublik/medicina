@@ -1,0 +1,12 @@
+You were registered on <%= Appl.config['site_name'] %> <%= Appl.config['domain'] %>
+
+The registration information:
+
+User Id: <%= @user[:id] %>
+User Login: <%= @user[:login] %>
+Password: <%= @user[:password] %>
+
+For accounting record activation follow the link
+http://<%= Appl.config['domain'] %>/login/activate/<%= @user[:code_activate] %>
+
+Yours faithfully administration http://<%= Appl.config['domain'] %>/

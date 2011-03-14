@@ -1,0 +1,7 @@
+<% 
+title(@page.title)
+keywords(@page.title)
+-%>
+<%= simple_format(@page.body) %>
+
+<%= content_tag(:div, link_to(t('general.edit'), edit_page_path(@page)) + '|' +  link_to(t('general.back'), pages_path)) if is_admin? %>

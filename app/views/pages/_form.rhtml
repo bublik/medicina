@@ -1,0 +1,29 @@
+<% form_for(@page) do |f| %>
+  <%= f.error_messages %>
+  <!-- markItUp! -->
+  <script type="text/javascript" src="/markitup/jquery.markitup.pack.js"></script>
+  <!-- markItUp! toolbar settings -->
+  <script type="text/javascript" src="/markitup/sets/html/set.js"></script>
+  <!-- markItUp! skin -->
+  <link rel="stylesheet" type="text/css" href="/markitup/skins/markitup/style.css" />
+  <!--  markItUp! toolbar skin -->
+  <link rel="stylesheet" type="text/css" href="/markitup/sets/html/style.css" />
+  <script type="text/javascript" >
+    $(document).ready(function() { $("#markItUp").markItUp(mySettings); });
+  </script>
+  <p>
+    <%= f.label :identifier %><br />
+    <%= f.text_field :identifier %>
+  </p>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :body %><br />
+    <%= f.text_area :body, :id =>'markItUp', :size => '640x480' -%>
+  </p>
+  <p>
+    <%= f.submit t('general.save') %>
+  </p>
+<% end %>

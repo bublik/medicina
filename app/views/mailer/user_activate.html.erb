@@ -1,0 +1,13 @@
+
+Вы зарегистрировались на <%= Appl.config['site_name'] %> <%= Appl.config['domain'] %>
+
+Регистрационная информация:
+
+User Id: <%= @user[:id] %>
+User Login: <%= @user[:login] %>
+Password: <%= @user[:password] %>
+
+Для активации учетной записи перейдите по ссылке 
+http://<%= Appl.config['domain'] %>/login/activate/<%= @user[:code_activate] %>
+
+С уважением администрация http://<%= Appl.config['domain'] %>/

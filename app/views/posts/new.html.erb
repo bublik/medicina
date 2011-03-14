@@ -1,0 +1,6 @@
+<% title(t('general.new_article')) %>
+<h1><%= yield(:title) %></h1>
+<%= error_messages_for 'post', 'attachment' %>
+
+<%= render :partial => 'form_msg', :locals => {:post => @post} -%>
+<%= link_to t('general.back'), posts_path %>

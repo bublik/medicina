@@ -1,0 +1,50 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id             :integer         not null, primary key
+#  login          :string(15)      default(""), not null
+#  email          :string(50)      default(""), not null
+#  first_name     :string(20)      default(""), not null
+#  last_name      :string(20)      default(""), not null
+#  avatar         :string(50)      default(""), not null
+#  privilegies    :integer         default(2)
+#  raiting        :integer         default(0)
+#  password       :string(32)      default(""), not null
+#  crypt_password :string(32)      default(""), not null
+#  active         :boolean
+#  code_activate  :string(32)
+#  birth_day      :datetime
+#  icq_number     :integer
+#  home_page      :string(100)
+#  location       :string(100)
+#  interests      :string(100)
+#  job            :string(100)
+#  description    :string(255)     default("")
+#  created_at     :datetime
+#  updated_at     :datetime
+#
+
+--- 
+users_001: 
+  updated_at: 2008-05-26 17:11:24.541657
+  raiting: "0"
+  home_page: 
+  code_activate: 3b360756a2ee182b3ea347591b22988a
+  crypt_password: 21232f297a57a5a743894a0e4a801fc3
+  id: "1"
+  description: ""
+  icq_number: 
+  birth_day: 2008-05-26 17:11:24.527241
+  job: 
+  privilegies: "3"
+  avatar: ""
+  first_name: ""
+  interests: 
+  password: admin
+  last_name: ""
+  login: admin
+  created_at: 2008-05-26 17:11:24.527022
+  location: 
+  active: t
+  email: rebisall@gmail.com

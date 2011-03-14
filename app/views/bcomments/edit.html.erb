@@ -1,0 +1,11 @@
+<h1><%= t('general.comment_edit') %></h1>
+
+<%= error_messages_for :bcomment %>
+
+<% form_for([@post,@bcomment]) do |f| %>
+  <p> <%= f.text_area :body, :size => '60x10'%></p>
+  <p> <%= f.submit t('general.save') %></p>
+<% end %>
+
+<%#= link_to 'Show', @bcomment %> 
+<%= link_to t('general.back'), post_path(@post) %>

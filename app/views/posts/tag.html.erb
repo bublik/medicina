@@ -1,0 +1,19 @@
+<% if @posts.size > 0
+  description(@tag_string)
+  title(@tag_string)
+  keywords(@tag_string)
+end
+%>
+
+<h1><%= t('general.tagged_articles') %></h1>
+<%= t('general.found') + content_tag(:span, " #{@posts.size}", :class => 'b') + ' ' + t('general.coincidence_wodth_tag') %>
+<%= link_to(h(@tag_string), {:action => 'posts', :action => 'tag'}, :class => 'b orange')%>.
+<% @post_title = "#{params[:id]} / "+ (@posts.first ? @posts.first.title : '') %>
+<% @posts.each do |post| %>
+  <%= render :partial => 'msg', :locals => {:post => post} -%>
+<% end %>
+
+<%= link_to(image_tag('/images/ico/rss.gif')+'atom','/posts.atom') +
+  link_to(image_tag('/images/ico/rss.gif')+'rss','/posts.rss') %>
+{{google_horizontal_advert}}
+<%=  will_paginate(@posts).to_s %>

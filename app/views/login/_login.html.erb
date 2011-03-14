@@ -1,0 +1,23 @@
+<div class="r pagination">
+  <%= link_to(t('general.request_activate'), {:controller => 'login', :action => 'form_reactivate'}, :class => 'small') %> |
+  <%= link_to(t('general.request_password'), {:controller => 'login', :action => 'form_repassword'}, :class => 'small') %>
+</div>
+<div class="c">
+  <% form_remote_for(:user,:url=>{:controller=>'login',:action=>'auth'}) do -%>
+    <table style="border-spacing: 15pt;" class="w450px border">
+      <tr><th colspan="2"><%= t('general.auth') %> </th></tr>
+      <tr>
+        <td><%= t('general.login') %>:</td>
+        <td> <%= text_field "user", "login", :size => 20, :class => 'w100' %> </td>
+      </tr>
+      <tr>
+        <td><%= t('general.password') %>:</td>
+        <td><%= password_field "user", "password", :size => 20 , :maxsize => 20, :class => 'w100' %></td>
+      </tr>
+      <tr>
+        <td colspan="2" align="center"><%= submit_tag t('general.enter') %></td>
+      </tr>
+    </table>
+  <% end -%>
+  <br/><%= link_to(t('general.close'),'#', :onClick => "Element.toggle('login'); Element.toggle('page');", :class => 'button') %>
+</div>

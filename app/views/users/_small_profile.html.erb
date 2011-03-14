@@ -1,0 +1,8 @@
+<small style="width: 150px; display: block;">
+  <%= link_user(user) %><br/>
+  <%= t('user.location') + ': ' + user.location %><br/>
+  <%= t('general.posts') + ': ' + user.posts %><br/>
+  <%= t('user.created_at') + ': ' + user.created_at.to_s(:date) %><br/>
+  <%= link_user_post(user) %><br/>
+  <%= user.description if user.description%>
+</small>

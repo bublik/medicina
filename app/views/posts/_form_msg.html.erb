@@ -1,0 +1,45 @@
+<% form_for(@post, :html => { :multipart => true }) do |f| %>
+  <%= javascript_tag " function cat_change(){ $('#post_category_id').toggle(); $('#category_name').toggle(); }"%>
+<!-- markItUp! -->
+<script type="text/javascript" src="/markitup/jquery.markitup.pack.js"></script>
+<!-- markItUp! toolbar settings -->
+<script type="text/javascript" src="/markitup/sets/html/set.js"></script>
+<!-- markItUp! skin -->
+<link rel="stylesheet" type="text/css" href="/markitup/skins/markitup/style.css" />
+<!--  markItUp! toolbar skin -->
+<link rel="stylesheet" type="text/css" href="/markitup/sets/html/style.css" />
+<script type="text/javascript" >
+    $(document).ready(function() { $("#markItUp").markItUp(mySettings); });
+</script>
+  <dl>
+    <dt>
+      <b><%= t('general.section') %>:</b>
+      <small><%= t('general.select_section') %> <%= link_to_function(image_tag('/images/ico/icon_settings.gif')+t('general.from_list_or_new'), "cat_change();")%></small>
+    </dt>
+    <dd>
+      <%= f.select(:category_id, Category.find(:all).collect{|c| [c.name, c.id]}, { :include_blank => false }) %>
+      <%= text_field_tag :category_name, '', {:size => '80', :style => 'display: none;'} %>
+    </dd>
+    <dt><b><%= t('general.tema') %>:</b></dt>
+    <dd><%= f.text_field :title, :size => '80' %></dd>
+    <dt><b><%= t('general.tags') %>:</b></dt>
+    <dd><%= f.text_field :tag_list, :size => '80'%><br/>
+      <small><%= t('general.tags_word') %></small>
+    </dd>
+    <dt><b><%= t('general.message') %>:</b></dt>
+    <dd><%#= fckeditor_textarea(:post, :body, :width => '640px', :height => '480px') %>
+    <%= text_area :post, :body, :id =>'markItUp', :size => '640x480' -%>
+    </dd>
+
+    <dt><b><%= t('general.files')%>:</b></dt>
+    <dd class="pad5">
+      <%= javascript_tag("var num=0; function attach_file(block){ ++num;
+    $(block).after('<input type=\"file\" size=\"30\" name=\"file[img'+num+']\"  class=\"block\"/>'); }")%>
+      <%= link_to_function image_tag('/images/ico/page_attachment.gif') +
+        t('general.attach_file'),  "attach_file('#msg_files');"%>
+      <div id="msg_files" style="display: none;" ></div>
+    </dd>
+    <dd><%= attachment_list(@post) %></dd>
+    <dd><%= submit_tag(t('general.send')) %></dd>
+  </dl>
+<% end %>

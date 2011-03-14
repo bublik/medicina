@@ -1,0 +1,29 @@
+<table class="noborder l">
+  <tr>
+    <td class="w200">
+      <%= categories_list %>
+      {{google_block_advert}}
+      <h2><%= t('general.new_messages') -%></h2>
+      <% @last_posts.each do |p| -%>
+        <%= link_to(p.title, post_path(p, :html), :class=> 'block', :title => p.title) -%>
+      <% end -%>
+      <h2><%= t('general.frends') -%></h2>
+      {{frends}}
+    </td>
+    <td>
+      <% @random_posts.each do |post| %>
+        <h2 class="pad5 post"><%= link_to( post.title, post_path(post, :html), :title => post.title) %></h2>
+        <div style="float: left;"><%= attachment_list(post) %></div>
+        <% if post.tags.empty? || post.body.blank? -%>
+          <%= post.body %>
+        <% else -%>
+          <%= tagged_body(post) %>
+        <% end -%>
+      <% end %>
+    </td>
+    <td class="w200">
+      {{google_block_advert}}
+      <%= hot_tags -%>
+    </td>
+  </tr>
+</table>

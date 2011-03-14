@@ -1,0 +1,1 @@
+page.replace_html "category_#{@category.id}",  @category.first_page ? link_to_remote(image_tag('/images/ico/icon_accept.gif'),:url => admin_cats_state_path(@category)) : link_to_remote(image_tag('/images/ico/delete.gif'), :url => admin_cats_state_path(@category))

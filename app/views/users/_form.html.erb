@@ -1,0 +1,27 @@
+<%= error_messages_for 'users' %>
+<!--[form:users]-->
+<table class="w50proc border l" >
+  <tr><th colspan="2"><%= t('general.profile') %></th></tr>
+  <tr><td><%= t('user.email') %></td>
+  <td><%= text_field 'users', 'email'  %></td></tr>
+  <tr><td><%= t('user.name') %></td>
+  <td><%= text_field 'users', 'first_name' %></td></tr>
+  <tr><td><%= t('user.last_name') %></td>
+  <td><%= text_field 'users', 'last_name'  %></td></tr>
+  <tr><td><%= t('user.birth_day') %></td>
+  <td><%=date_select('users' , 'birth_day',  :order => [:day, :month, :year], :end_year => 2007,:start_year=>1950)%></td></tr>
+  <tr><td><%= t('user.icq') %></td>
+  <td><%= text_field 'users', 'icq_number'  %></td></tr>
+  <tr><td><%= t('user.home_page') %></td>
+  <td><%= text_field 'users', 'home_page'  %></td></tr>
+  <tr><td><%= t('user.location') %></td>
+  <td><%= text_field 'users', 'location'  %></td></tr>
+  <tr><td><%= t('user.description') %></td>
+  <td><%= text_area 'users', 'description', :cols=>"50", :rows=>"3" %></td></tr>
+  <tr><td><%= t('user.interests') %></td>
+  <td><%= text_area 'users', 'interests', :cols=>"50", :rows=>"5" %></td></tr>
+  <tr><td><%= t('user.work') %></td>
+  <td><%= text_area 'users', 'job', :cols=>"50", :rows=>"5"  %></td></tr>
+  <tr><td colspan="2"><%= submit_tag t('general.save') %></td></tr>
+</table>
+<!--[eoform:users]-->

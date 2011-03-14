@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="ru">
+  <head>
+    <%= content_tag(:title, (yield(:title) ? "#{yield(:title)} :: #{Appl.config['site_name']}" : Appl.config['site_name'])) %>
+    <%= content_tag(:meta, nil, :'http-equiv' => 'Content-Type', :content => 'text/html; charset=utf-8') %>
+    <meta name="keywords" lang="<%= Appl.config['default_lang'] %>" content="<%= {yield(:keywords), Appl.config['keywords']} %>" />
+    <meta name="description" lang="<%= Appl.config['default_lang'] %>" content="<%=  {yield(:description), Appl.config['description']} %>" />
+    <meta name="author" lang="<%= Appl.config['default_lang'] %>" content="<%= Appl.config['author'] %>" />
+    <meta name="Document-state" content ="Dynamic" />
+    <meta name="robots" content="index,follow" />
+    <meta name="verify-v1" content="oDKAi3d+MC1VQnvTx4bu2I4pKRwd+IU0FIcqkScXNzE=" />
+    <%= content_tag(:meta, nil, :name => 'Revisit', :content => '1') %>
+    <%= stylesheet_link_tag 'index', :media => 'all', :cache => true %>
+    <%= javascript_include_tag :all,  :cache => 'app' %>
+    <%= auto_discovery_link_tag('rss', '/posts.rss', {:title => "#{Appl.config['site_name']} Rss"}) %>
+    <%= auto_discovery_link_tag('atom', '/posts.atom', {:title => "#{Appl.config['site_name']} Atom"})%>
+    <%#= javascript_include_tag :fckeditor if @post %>
+  </head>
+  <body>
+    <%= render :partial=>'layouts/head' %>
+    <h2 class="site_name"><%= Appl.config['site_name'] %></h2>
+    <div id="container">
+      {{before_container}}
+      <div class="c">{{google_horizontal_advert}}</div>
+      <!--flash and notice-->
+      <%= flash_and_find(flash) %>
+      <!--page-->
+      <div id="page">
+        <%= yield %>
+      </div>
+    </div>
+    {{before_footer}}
+    <%= render :partial=>'layouts/footermenu' %>
+  </body>
+</html>

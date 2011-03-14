@@ -1,0 +1,28 @@
+<div class="header">
+  <%= google_analytix_adds -%>
+  <div style="height: 60px; background: transparent url(/images/toolbar.png) repeat-x scroll left top; ">
+    <span class="pad5">
+      <%=link_to( image_tag('/images/ico/icon_home.gif', :alt => Appl.config['site_name']) + " #{t('general.main')}" ,'/', :title => t('general.main')) -%>
+      <%= image_tag('/images/ico/bookmark.gif', :alt => 'Add to bookmarks') -%>
+      <script type="text/javascript">bookmark();</script>
+      <%= content_tag(:noindex, link_to(image_tag('/images/ico/translate.gif')+' translate', "http://www.google.com/translate?u=http://#{Appl.config['domain']}#{request.env['REQUEST_URI']}&amp;hl=en&amp;ie=UTF8&amp;langpair=ru|en", :rel => 'nofollow')) -%>
+      <% if loged_in? -%>
+        <%= image_tag('/images/ico/profile.gif') +' '+ link_to(current_user.full_name, edit_user_path(current_user)) -%>
+        <%= link_to(image_tag('/images/ico/page_security.gif')+'manage', {:controller => '/admin/manage'}, :class => 'orange') if is_admin? -%>
+        &nbsp;&nbsp;&nbsp;&nbsp; <%= image_tag('/images/ico/logout.gif') +' '+ link_to_remote( t('general.exit'), :url=>{:controller=>'login', :action=>'logout', :id=> current_user}) -%>
+        <%= link_to_new_post -%>
+      <% else %>
+        <%= image_tag('/images/ico/profile.gif') +' '+ link_to_remote( t('general.enter'),:url=>{:controller=>'login',:action=>'login'}) -%>
+      <% end -%>
+    </span>
+  </div>
+  {{header_google_search_form}}
+  <!--topmenu-->
+  <div id="topmenu">
+    <%= link_to( t('general.registration'),new_user_path) unless current_user %>
+    <%= link_to( t('general.articles'), posts_path)%>
+<%#= link_to( t('general.users'), users_path)%>
+    <%= link_to( t('general.progect_links'), {:controller => 'progect', :action => 'dir'})%>
+    <%= link_to_new_post %>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+
+<div class="clear"><%= link_to_function(t('general.add_comment'), :onclick => "$('##{dom_id(post)}').toggle();", :class => 'pad5 border') -%></div>
+<% div_for(post, :style => 'display: none;') do -%>
+  <%= error_messages_for :bcomment -%>
+
+  <% form_for([post, bcomment]) do |f| -%>
+    <dl>
+      <dd><%= f.text_area :body, :size => '60x10' -%></dd>
+      <dd><%= show_simple_captcha(
+          :label => t('general.human_authorization'),
+          :image_style => 'embosed_silver',
+          :distortion => 'high') unless loged_in? %></dd>
+    </dl>
+    <%= f.submit t('general.create') -%>
+  <% end -%>
+<% end -%>

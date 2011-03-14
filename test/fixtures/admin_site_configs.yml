@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  body: MyText
+  is_active: false
+  disable_at: 2009-08-30 18:52:58
+
+two:
+  body: MyText
+  is_active: false
+  disable_at: 2009-08-30 18:52:58

@@ -1,0 +1,43 @@
+<div>{{footer_google_search_form}}</div>
+<div class="c small"><%= show_sape_links(2) -%></div>
+<!--Tags -->
+<div class="pad5" style="clear: both; margin-bottom: 60px; text-align: center">
+  <% tagged_links.each do |tag| -%>
+    <%= link_to "#{tag.name} [#{tag.count}]", tagging_url(:tag_name=>tag.name),:rel=>'tag',:class=>"s#{rand(9)}" -%>
+  <% end unless controller.class.name.eql?('ProgectController') -%>
+</div>
+<!--Counters and Alalytix-->
+<div id="flinks" class="c">
+  <!-- GOOGLE stats -->
+  <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+    var pageTracker = _gat._getTracker('<%= Appl.config['google_analytix_uid'] %>');
+    pageTracker._initData();
+    pageTracker._trackPageview();
+  </script>
+  <noindex>{{counter_buttons}}</noindex>
+</div>
+<div class="foter">
+  <div class="c small">
+    <script type="text/javascript">bookmark();</script> |
+    <% if loged_in? -%>
+      <%= link_to(current_user.full_name, edit_user_path(current_user)) -%>
+      <%= link_to('Управление', {:controller => '/admin/manage'}, :class => 'orange') if is_admin? -%>
+      <%= '|' + link_to_remote( t('general.exit'), :url=>{:controller=>'login', :action=>'logout', :id=> current_user}) -%> |
+      <%= link_to_new_post -%> |
+    <% else %>
+      <%= link_to_remote( t('general.enter'),:url=>{:controller=>'login',:action=>'login'}) -%> |
+    <% end -%>
+
+    <%= link_to( t('general.users'), users_path)%> |
+    <%= link_to( t('general.articles'), posts_path)%> 
+    <%#= link_to( t('general.progect_links'), {:controller => 'progect', :action => 'dir'})%>
+    <br/>
+    <%= t('general.if_have_questions_contact_to')+' '+mail_to("Voloshin Ruslan <#{Appl.config['admin_email']}>", "support", :encode => "hex") -%><br/>
+    <%= link_to(Appl.config['domain'], "http://#{Appl.config['domain']}/", :title => Appl.config['site_name']) -%>
+    Copyright &copy; 2007 - 20010
+  </div>
+</div>

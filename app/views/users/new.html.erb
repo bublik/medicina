@@ -1,0 +1,10 @@
+<div align="center">
+  <% form_for(:users,:url=>{:controller => 'users',:action => 'create'}) do -%>
+
+    <%= render :partial => 'new' %>
+    <div class="pagination">
+      <%= submit_tag t('general.registration') %>
+    </div>
+  <% end -%>
+</div>
+<%= link_to(t('general.back'), {:action => 'index'}, :class => 'button') %>

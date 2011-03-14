@@ -1,0 +1,14 @@
+<% if false %>
+  <% @categories.each do |cat| -%>
+    <% cache(cat.cache_key(I18n.locale.to_s)) do -%>
+      <div class="pad5 category">
+        <h2><%= link_to(cat.name, category_posts_url(cat), :class => 'orange', :title => cat.name) -%></h2>
+        <%= cat.posts.collect{ |p| content_tag(:div, link_to( p.title, post_path(p,:html), :title => p.title))} -%>
+      </div>
+    <% end %>
+    <%= content_tag(:br, nil, :style => 'clear: both;') if (@categories.index(cat) % 3).eql?(2) -%>
+  <% end %>
+<% else %>
+  <%= render :partial => '/posts/msg', :locals => {:post => Post.find(15)} -%>
+  <br clear="all" />
+<% end %>

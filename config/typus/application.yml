@@ -1,0 +1,117 @@
+# Typus Models Configuration File
+#
+# Use the README file on the same folder as this file as a reference to
+# customize this file to your needs.
+#
+#Attachment:
+#  fields:
+#    list: id, content_type, filename, thumbnail, size, width, height, post, parent
+#    form: content_type, filename, thumbnail, size, width, height, post, parent
+#    show: id, content_type, filename, thumbnail, size, width, height, created_at, updated_at, post, parent
+#  actions:
+#    index:
+#    edit:
+#  order_by:
+#  relationships: parent, post, thumbnails
+#  filters:
+#  search:
+#  application: medicina
+#  description:
+
+Bcomment:
+  options:
+    icon_on_boolean: true
+    per_page: 50
+    sidebar_selector: 5
+    nil: 'guest'
+  fields:
+    list: id, user, post
+    form: body, user, post
+    show: id, body, created_at, updated_at, user, post
+  actions:
+    index:
+    edit:
+  order_by:
+  relationships: post, user
+  filters:
+  search:
+  application: 'Управление'
+  description: 'Комментарии'
+
+Category:
+  fields:
+    list: id, name, title, first_page
+    form: name, title, first_page
+    show: id, name, title, created_at, updated_at, first_page
+  actions:
+    index:
+    edit:
+  order_by:
+  relationships: posts
+  filters:
+  search:
+  application: 'Управление'
+  description: 'Список категорий'
+
+Post:
+  options:
+    end_year: 2015
+    form_rows: 25
+    icon_on_boolean: true
+    index_after_save: false
+    per_page: 15
+    sidebar_selector: 5
+    nil: 'nil'
+  fields:
+    list: id, title, user, category
+    form: title, body, user, category
+    show: id, title, body, created_at, updated_at, user, category
+  actions:
+    index:
+    edit:
+  order_by: id, category_id
+  relationships: bcomments, globalize_translations #  user attachments, globalize_translations, taggings, taggings
+  filters:
+  search:
+  application: 'Управление'
+  description: 'Список статей'
+
+SiteConfig:
+  fields:
+    list: id, identifier, is_active, disable_at
+    form: body, identifier, is_active, disable_at
+    show: id, body, identifier, is_active, disable_at, created_at, updated_at
+  actions:
+    index:
+    edit:
+  order_by:
+  relationships: #globalize_translations
+  filters:
+  search:
+  application: 'Управление'
+  description: 'Настройки сайта и рекламных блоков'
+
+User:
+  icon_on_boolean: true
+  fields:
+    list: id, login, email, full_name, avatar, privilegies, password, active, icq_number, home_page, location
+    form: login, email, first_name, last_name, password, active, birth_day, icq_number, home_page, location, interests, job, description
+    show: id, login, email, first_name, last_name, avatar, privilegies, raiting, password, crypt_password, active, code_activate, birth_day, icq_number, home_page, location, interests, job, description, created_at, updated_at
+  actions:
+    index:
+    edit:
+  options:
+    read_only: login, avatar
+    selectors: active
+    booleans:
+        # attribute: true, false
+      default: publicado, no_publicado
+      status: ["It's active", "It's inactive"]
+
+  order_by: created_at, email, login
+  filters: active
+  relationships: bcomments, posts
+  search: login, email, first_name, last_name
+  application: 'Управление'
+  description: 'Список пользователей'
+

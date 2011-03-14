@@ -1,0 +1,25 @@
+<% title(@posts.first.title) if @posts.first && !params[:user_id].nil?%>
+<% title(@posts.first.category.title) if params[:category_id] %>
+<h1><%= yield(:title) %></h1>
+<div class="r">
+  <h1 class="small">
+    <%= link_to(image_tag('/images/ico/rss.gif') + 'rss', '/posts.rss') +
+      link_to(image_tag('/images/ico/rss.gif') + 'atom', '/posts.atom') -%>
+  </h1>
+  <%= will_paginate(@posts) %>
+</div>
+<table>
+  <tr>
+    <td>
+      <%= @posts.collect do |post|
+        render :partial => 'msg', :locals => {:post => post}
+      end -%>
+      {{advert_after_post}}
+    </td>
+    <td>
+      <%= content_tag(:span,   categories_list + hot_tags ) %>
+    </td>
+  </tr>
+</table>
+<%= content_tag(:div, will_paginate(@posts), :class => 'r') %>
+

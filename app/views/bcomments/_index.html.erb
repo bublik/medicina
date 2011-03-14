@@ -1,0 +1,11 @@
+<% bcomments.each do |bcomment| %>
+  <% div_for(bcomment, :class => 'pad5') do %>
+    <%= textilize_without_paragraph(strip_links(bcomment.body)) -%>
+    <div class="small b">От: <%= link_user(bcomment.user) %>
+      <% if can_edit(bcomment.post) || can_edit(bcomment)%>
+        <%= ' | '+link_to(t('general.edit'), [:edit, post,bcomment]) -%>
+        <%= ' | '+link_to(t('general.delete'), [post, bcomment], :confirm => t('general.are_you_sure'), :method => :delete) -%>
+      <% end -%>
+    </div>
+  <% end -%>
+<% end -%>

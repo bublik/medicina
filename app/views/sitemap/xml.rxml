@@ -1,0 +1,29 @@
+xml.instruct! :xml, :version=>"1.0"
+xml.tag! 'urlset', "xmlns" => "http://www.sitemaps.org/schemas/sitemap/0.9" do
+  #README https://www.google.com/webmasters/tools/docs/ru/protocol.html
+  #главная страница
+  xml.tag! 'url' do
+    xml.tag! 'loc', 'http://'+Appl.config['domain']
+    xml.tag! 'lastmod', @last_updated.to_s(:date)
+    xml.tag! 'changefreq', 'daily'
+    xml.tag! 'priority', '0.1'
+  end
+  #страницы сообщений 
+  for page in @messages do
+    xml.tag! 'url' do
+      xml.tag! 'loc', post_url(page, :html)# url_for(:only_path => false, :controller => 'posts', :action => 'show', :id => page)
+      xml.tag! 'lastmod', page.updated_at.to_s(:date) #strftime("%Y-%m-%d")
+      xml.tag! 'changefreq', 'monthly'
+      xml.tag! 'priority', '0.9'
+    end
+  end
+  #тегированные страницы
+  @tags.each do |tag|
+    xml.tag! 'url' do #link_to(h(tag.name), tagged_post_path(:tag => tag.name))
+      xml.tag! 'loc', url_for(:only_path => false, :controller => 'posts', :action => 'tag', :id => tag.name)
+      xml.tag! 'lastmod', tag.taggings.find(:first, :order => 'created_at DESC').created_at.to_s(:date) #strftime("%Y-%m-%d")
+      xml.tag! 'changefreq', 'weekly'
+      xml.tag! 'priority', '0.8'
+    end  
+  end  
+end

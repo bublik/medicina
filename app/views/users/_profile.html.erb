@@ -1,0 +1,5 @@
+<div class="c">
+  <% form_for(:profile, :url => user_path(@users), :html => { :method => :put })  do %>
+    <%= render(:partial => 'form') %>
+  <% end %>
+</div>

@@ -1,0 +1,6 @@
+page.replace_html  'flash', ''
+page.replace_html  'login', :partial => 'login' 
+page.show 'login'
+page.hide 'page'
+#page.show 'flash'
+#page.visual_effect :fade, 'flash'

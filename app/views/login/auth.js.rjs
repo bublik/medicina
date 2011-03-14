@@ -1,0 +1,12 @@
+if @user.nil?
+  page.replace_html 'flash', flash[:notice] 
+  page.show 'flash' 
+elsif !@user.nil? && current_user
+  page.replace_html 'flash', '' 
+  page.toggle 'login'
+  page.redirect_to '/'
+elsif !@user.nil? && !@user.active
+  page.replace_html 'flash', flash[:notice]
+  page.toggle 'login'
+  page.redirect_to :action => 'form_reactivate'
+end

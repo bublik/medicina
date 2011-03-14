@@ -1,0 +1,509 @@
+--- 
+en: 
+  notice_error_activated: the Error of activization of the accounting record!
+  job: Work
+  key_words: " Keywords "
+  responds: Answers
+  enter: to Enter
+  current_password_updated: the Password is changed!
+  avatar_updated_error: the Error at preservation, choose other image!
+  edit: to Edit
+  request_password: a password Reminder
+  comment_added: " Comment is added. "
+  for_user: For the user
+  mail_describe_msg: the Subscription at a forum
+  location: Lives
+  registration: Registration
+  gems: the List of jams
+  enter_your_login: Enter your Login
+  guests_online: " Visitors: "
+  mail_new_msg: the New message
+  guest: the Visitor
+  find: Search
+  fio: !binary |
+    0KTQmNCe
+
+  upload: to Load
+  search_in: to Search in
+  forum: the Forum
+  page_not_found: the page is not found
+  profile: the Profile
+  file_not_deleted: " the File is not removed! "
+  moderator: the Moderator
+  last_posts: Last messages
+  delete: to Remove
+  password: the Password
+  replay_priv: Send private
+  posts: Messages
+  show: to Look
+  are_you_sure: " you are assured? "
+  mail_change_password: password Change
+  activerecord: 
+    errors: 
+      messages: 
+        taken: exists
+        accepted: to confirm
+        not_a_number: not a number
+        blank: can not be empty
+        greater_than_or_equal_to: may have a value greater than or equal {{count}}
+        confirmation: does not coincide with the confirmation
+        less_than_or_equal_to: can have a value less than or equal {{count}}
+        exclusion: has a reserved value
+        odd: can have only even values
+        invalid: has an invalid value
+        too_short: 
+          many: insufficient length (can not be less {{count}} characters)
+          few: insufficient length (can not be less {{count}} characters)
+          one: insufficient length (can not be less {{count}} characters)
+          other: insufficient length (can not be less {{count}} characters)
+        wrong_length: 
+          many: incorrect length (length can be exactly {{count}} characters)
+          few: incorrect length (length can be exactly {{count}} characters)
+          one: incorrect length (length can be exactly {{count}} symbol)
+          other: incorrect length (length can be exactly {{count}} characters)
+        empty: can not be empty
+        too_long: 
+          many: too long (can not be more than {{count}} characters)
+          few: too long (can not be more than {{count}} characters)
+          one: too long (can not be more than {{count}} symbol)
+          other: too long (can not be more than {{count}} characters)
+        less_than: may have a value less than {{count}}
+        even: can have only odd values
+        greater_than: may have a value greater {{count}}
+        equal_to: can only have a value equal {{count}}
+        inclusion: has unintended meaning
+      template: 
+        body: "There were problems with the following fields:"
+        header: 
+          many: "{{model}}: save failed due to ((count)) errors"
+          few: "{{model}}: save failed due to ((count)) errors"
+          one: 1 error prohibited this {{model}} from being saved
+          other: "{{count}} errors prohibited this {{model}} from being saved"
+  openclose: to Close after message addition.
+  back: Back
+  new: New
+  add_comment: to Add the comment
+  notice_messages_not_found: Messages are not present!
+  message: the Message
+  main: Main
+  users_list: the List of users
+  admin: the Administrator
+  notice_msg_updated: the Message is changed!
+  replay: to Answer
+  upload_avatar: to Load an avatar
+  phrase: the Phrase
+  notice_authorized_area: " Access only for \xD0\xB0\xD0\xB2\xD1\x82\xD0\xBE\xD1\x80\xD0\xB8\xD0\xB7\xD0\xB8\xD1\x80\xD0\xBE\xD0\xB2\xD0\xB0\xD0\xBD\xD0\xBD\xD1\x8B\xD1\x85 users! "
+  login: the Login
+  mail_reminde_password: a password Reminder
+  notice_user_created: <big> the User is created! </big> <br/> For accounting record activization follow the link in the letter.
+  tema: the Theme
+  comment_saved: " Comment is kept. "
+  notice_user_unknown: Such user does not exist!
+  droped: It is removed
+  save: to Keep
+  user_not_activated: the User is not made active.
+  mail_new_privatemsg: you have received the private message
+  content_incorrect: Data are not correct!
+  number: 
+    format: 
+      separator: .
+      delimiter: ","
+      precision: 3
+    human: 
+      format: 
+        delimiter: ""
+        precision: 1
+      storage_units: 
+        format: "%n %u"
+        units: 
+          kb: KB
+          tb: TB
+          gb: GB
+          byte: 
+            many: B
+            few: bytes
+            one: Byte
+            other: Bytes
+          mb: MB
+    percentage: 
+      format: 
+        delimiter: ""
+    precision: 
+      format: 
+        delimiter: ""
+    currency: 
+      format: 
+        format: "%u%n"
+        unit: $
+        separator: .
+        delimiter: ","
+        precision: 2
+  themes: Themes
+  notice_message_sende_err: the Error of sending of messages!
+  extendet_search: the Expanded search
+  datetime: 
+    distance_in_words: 
+      less_than_x_minutes: 
+        many: less {{count}} minutes
+        few: less {{count}} minutes
+        one: less than a minute
+        other: less than {{count}} minutes
+      x_days: 
+        many: "{{count}} days"
+        few: "{{count}} day"
+        one: 1 day
+        other: "{{count}} days"
+      x_minutes: 
+        many: "{{count}} minutes"
+        few: "{{count}} minutes"
+        one: 1 minute
+        other: "{{count}} minutes"
+      x_seconds: 
+        many: "{{count}} seconds"
+        few: "{{count}} seconds"
+        one: 1 second
+        other: "{{count}} seconds"
+      about_x_hours: 
+        many: about {{count}} hours
+        few: about {{count}} hours
+        one: about {{count}} hours
+        other: about {{count}} hours
+      less_than_x_seconds: 
+        many: less {{count}} seconds
+        few: less {{count}} seconds
+        one: less than 1 second
+        other: less than {{count}} seconds
+      x_months: 
+        many: "{{count}} months"
+        few: "{{count}} months"
+        one: 1 month
+        other: "{{count}} months"
+      about_x_months: 
+        many: about {{count}} months
+        few: about {{count}} months
+        one: about {{count}} months
+        other: about {{count}} months
+      about_x_years: 
+        many: about {{count}} years
+        few: about {{count}} years
+        one: about 1 year
+        other: about {{count}} years
+      over_x_years: 
+        many: more {{count}} years
+        few: more {{count}} years
+        one: more {{count}} year
+        other: over {{count}} years
+      half_a_minute: half a minute
+    prompts: 
+      month: Month
+      minute: Minutes
+      second: Seconds
+      hour: Hours
+      day: Day
+      year: Year
+  avatar_updated: the Avatar is changed.
+  upload_avatar_size: the avatar should be no more than 80x80 and volume less than 5 kb.
+  login_password_not_found: Incorrect Login or Password
+  notice_user_droped: the User is removed!
+  stickunstick: to Make important after message addition.
+  notice_user_id_incorrect: Not correct UID the user!
+  write_new_article: " to Write article "
+  hide: to Hide
+  notice_email_incorrect: Not a correct format of a mail box!
+  unknown_user: the Unknown person
+  passwords_different: Passwords are not established or do not coincide!
+  unknown_tag: "the Unknown person \xD1\x82\xD0\xB5\xD0\xB3"
+  private_mails: Personal letters
+  general: 
+    notice_error_activated: Error activate your account!
+    job: Work
+    captcha_incorrect: The entered text does not correspond on image
+    key_words: Keywords
+    responds: Responses
+    enter: Sign
+    current_password_updated: Password changed!
+    articles: Articles
+    avatar_updated_error: Error saving, select another image!
+    edit: Edit
+    request_password: Password reminder
+    comment_added: Comment added.
+    for_user: For Users
+    gems: List jams
+    mail_describe_msg: Subscribe forum
+    location: Lives
+    comments: Comments
+    found: Found
+    registration: Register
+    enter_your_login: Enter your Username
+    error_403: 
+      message: You are not allowed to view information on the address.
+      title: Access denied.
+    guests_online: "Guests:"
+    mail_new_msg: New Message
+    find: Search
+    error_404: 
+      title: Sorry this page no.
+    fio: Name
+    upload: Load
+    about_project: About
+    search_in: Search
+    profile: Profile
+    forum: Forum
+    page_not_found: Page Not Found
+    last_posts: Latest
+    page: Page
+    guest_: Guest
+    file_not_deleted: The file is not deleted!
+    delete: Remove
+    password: Password
+    replay_priv: Private
+    posts: Posts
+    comment_edit: Editing comments
+    show: View
+    are_you_sure: Are you sure?
+    mail_change_password: Change Password
+    attach_file: Attach file
+    user_: Users
+    openclose: Close after adding the message.
+    back: Back
+    new: New
+    add_comment: Add comment
+    admin_: Admin
+    notice_messages_not_found: There are no!
+    message: Message
+    main: Home
+    users_list: List
+    notice_msg_updated: Post updated!
+    replay: Reply
+    upload_avatar: Upload avatar
+    phrase: Phrase
+    notice_authorized_area: Access only for authorized users!
+    login: Login
+    notice_user_created: User created!  To activate the account click on the link in the letter.
+    mail_reminde_password: Password reminder
+    from_list_or_new: list / create a new
+    tema: Subject
+    categories: Categories
+    notice_user_unknown: This user does not exist!
+    comment_saved: Comment saved.
+    droped: Deleted
+    save: Save
+    user_not_activated: User has not activated.
+    mail_new_privatemsg: You have received a private message
+    content_incorrect: The data are not correct!
+    themes: Threads
+    notice_message_sende_err: Error sending message!
+    extendet_search: Advanced Search
+    avatar_updated: Avatar changed.
+    files: Files
+    if_have_questions_contact_to: on all contact
+    upload_avatar_size: avatar must be no more than 80x80 and smaller than 5 kb.
+    login_password_not_found: Username / Password not valid
+    destroy: Remove
+    error_500: 
+      message: The Administration has already alerted to the error, and soon it will be dealt with.  Try to come later.
+      title: Internal Server Error
+    notice_user_droped: User deleted!
+    stickunstick: Make important after the addition of the message.
+    notice_user_id_incorrect: Not a valid UID of the user!
+    write_new_article: Write an article
+    section: Section
+    hide: Hide
+    categoty_is_empty: In this section, no records
+    notice_email_incorrect: Not correct format mailbox!
+    unknown_user: Unknown
+    tags: Keywords
+    pages: Pages
+    tags_word: comma separated
+    passwords_different: Passwords are not installed or do not match!
+    unknown_tag: Unknown tag
+    private_mails: Personal letters
+    files_not_found: Files, no!
+    progect_links: Resources
+    notice_message_sended: Message sent!
+    select_section: Select
+    first: First
+    messages: Messages
+    human_authorization: "Enter:"
+    notice_msg_created: New theme created!
+    search_results: Results
+    new_messages: New posts
+    avatar: Avatar
+    notice_logout: You otloginilis!
+    moderator_: Moderator
+    notice_permissions_denie: You do not have permission to perform this operation!
+    mail_aply_register: Confirmation registritsii
+    notice_register_add_msg: To add a message register!
+    clouse: Closed
+    close: Close
+    reputation: Reputation
+    send: Submit
+    next: Next
+    private_information_saved: Personal data change.
+    mail_link_send: You have been sent a letter with further instructions
+    file_deleted: File deleted!
+    notice_message_slosed: Report is closed!
+    users: Community
+    notice_password_incorrect: Not valid password!
+    users_online: "Online:"
+    content_updated: These changed.
+    user_not_found: User not found!
+    exit: Exit
+    notice_message_deleted: Message deleted!
+    new_article: New article
+    private: Privatry
+    sections: Sections
+    notice_account_activated: Your account has been successfully activated!
+    auth: Authentication
+    last: Last
+    coincidence_wodth_tag: Matches with tag
+    request_activate: Increased account's
+    last_visit: Came by
+    notice_message_empty: Very short field!
+    create: Create
+    tagged_articles: Zategirovany topic
+    open: Open
+    previous: Previous
+    current_password_incorrect: Not sure the current password!
+    frends: Friends
+    content_updated_error: Error data changes!
+  pages: Pages
+  tags_word: " Keywords <div class = \"small\"> to divide a comma </small> "
+  files_not_found: " Files are not present! "
+  progect_links: Resources
+  notice_message_sended: the Message is sent!
+  time: 
+    am: am
+    formats: 
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+    pm: pm
+  user: 
+    in_active: Not activated
+    user_messages: His message
+    addons_information: More
+    confirm_email: Repeat E-mail
+    name: Name
+    show_profile: View Profile
+    updated_at: Last Visit
+    icq: ICQ
+    confirm_new_password: Confirm the password
+    home_page: Home
+    confirm_password: Repeat password
+    description: Signature
+    birth_day: Birth
+    change_password_title: Change Password
+    privilegies: Status
+    old_password: Old Password
+    new_password: New Password
+    interests: Interests
+    login: Login
+    password: Password
+    last_name: Surname
+    location: Residence
+    state: Condition
+    active: Active
+    email: E-mail
+    created_at: Registered
+    work: Work
+  first: the First
+  messages: Messages
+  notice_msg_created: the New theme is created!
+  search_results: Results of search
+  avatar: the Avatar
+  notice_logout: You logged out!
+  mail_aply_register: Acknowledgement registration
+  support: 
+    array: 
+      last_word_connector: ", and "
+      words_connector: ", "
+      two_words_connector: " and "
+      sentence_connector: and
+  notice_register_add_msg: For addition of messages be registered!
+  notice_permissions_denie: You do not have rights to performance of the given operation!
+  close: It is closed
+  reputation: Reputation
+  send: to Send
+  next: Following
+  private_information_saved: Personal data are changed.
+  mail_link_send: the letter with the further instructions has been sent you
+  file_deleted: " the File is removed! "
+  notice_message_slosed: the Message is closed!
+  users: Users
+  notice_password_incorrect: Not the true password!
+  users_online: " Online: "
+  content_updated: Data are changed.
+  user_not_found: the User is not found!
+  exit: to Leave
+  notice_message_deleted: the Message is removed!
+  private: Private
+  sections: Sections
+  notice_account_activated: your accounting record is made successfully active!
+  auth: !binary |
+    0JDRg9GC0LXQvdGC0LjRhNC40LrQsNGG0LjRjw==
+
+  request_activate: Request to Activization
+  last: Last
+  last_visit: Came
+  notice_message_empty: too short fields!
+  create: to Create
+  previous: Previous
+  current_password_incorrect: Not the true current password!
+  open: It is opened
+  date: 
+    order: 
+    - :year
+    - :month
+    - :day
+    abbr_day_names: 
+    - Sun
+    - Mon
+    - Tue
+    - Wed
+    - Thu
+    - Fri
+    - Sat
+    formats: 
+      md: "% m-% d"
+      default: "%Y-%m-%d"
+      date: "% Y-% m-% d"
+      long: "%B %d, %Y"
+      short: "%b %d"
+    abbr_month_names: 
+    - 
+    - Jan
+    - Feb
+    - Mar
+    - Apr
+    - May
+    - Jun
+    - Jul
+    - Aug
+    - Sep
+    - Oct
+    - Nov
+    - Dec
+    month_names: 
+    - 
+    - January
+    - February
+    - March
+    - April
+    - May
+    - June
+    - July
+    - August
+    - September
+    - October
+    - November
+    - December
+    day_names: 
+    - Sunday
+    - Monday
+    - Tuesday
+    - Wednesday
+    - Thursday
+    - Friday
+    - Saturday
+  content_updated_error: the Error of change of data!

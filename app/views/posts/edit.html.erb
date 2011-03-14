@@ -1,0 +1,7 @@
+<%= error_messages_for :post %>
+
+<%= render :partial => 'form_msg', :locals => {:post => @post}%>
+<div class="pagination" >
+  <%= link_to t('general.show'), @post %> |
+  <%= link_to t('general.back'),  posts_path %>
+</div>
